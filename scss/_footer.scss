@@ -1,0 +1,34 @@
+
+.footer{
+    background-color: $color_principal;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .info_footer{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        .titulo_info_1{
+            margin-bottom: 1rem;
+        }
+        
+        .titulo_info_2{
+            margin-bottom: 1rem;
+        }
+        
+        .titulo_info_3{
+            margin-bottom: 1rem;
+        }
+        
+    }
+
+    .derechos_footer{
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        align-self: center;
+    }
+
+}

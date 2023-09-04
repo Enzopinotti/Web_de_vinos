@@ -1,0 +1,371 @@
+@media screen and (max-width: 990px) {
+
+    .container {  
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.4fr 2fr 0.5fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+        background-color: black;
+
+        .header { 
+            grid-area: header;
+            .contenedor_info{
+
+                nav .contenedor_nav a{
+        
+        
+                    width: 7rem;
+                    height: 2.05rem;
+            
+                }
+
+            }
+            
+        
+        }
+        
+        .main { 
+        
+            grid-area: main;
+            
+            .contenedor_texto{
+
+                .texto_1{
+                    font-size: 1rem;
+                    height: 6rem;
+                    position: relative;
+                    right: 1rem;
+                    .texto_1_1{
+        
+                        margin: 0;
+                        line-height: 1;
+                        opacity: 0.8;
+                    }
+                    .texto_1_2{
+
+                        font-size: 3rem;
+                        margin: 0;
+                        line-height: 1;
+                        animation: stretchEffect 3s infinite alternate; /* Aplica la animación */
+                        transform-origin: bottom;
+                        opacity: 0.8;
+                    }
+                    .texto_1_3{
+        
+                        margin: 0;
+                        line-height: 1;
+                        position: relative;
+                        bottom: 0.8rem;
+                        opacity: 0.8;
+                        
+                    }
+                }
+                .texto_2{
+                    display: flex;
+                    opacity: 0.8;
+                    position: relative;
+                    top: 4rem;
+                    left: 2rem;
+                    font-size: 1rem;
+                    .texto_2_1{
+                        display: flex;
+                        align-items: center;
+                        font-size: 4.15rem;
+                        
+                    }
+                    .texto_2_2{
+                        display: flex;
+                        height: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        
+        }
+        
+        .footer { 
+            
+            grid-area: footer; 
+        
+        }
+       
+    }
+    
+    @media screen and (max-width: 750px) {
+
+        .container {  
+        
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.4fr 1fr 0.5fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "header header header"
+            "main main main"
+            "footer footer footer";
+            background-color: black;
+
+            .header { 
+                grid-area: header;
+
+                .contenedor_info{
+
+                    nav .contenedor_nav{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        a{
+                            text-decoration: none;
+                            color: black;
+                            width: 6.5rem;
+                            height: 1.9rem;
+                            border-radius: 2px;
+                            transition: color 0.3s, font-size 0.3s;
+                            background-image: url(../fotos/etiqueta.png);
+                            background-size: contain;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-bottom: 0.5rem;
+                            
+                        }
+                    }
+                }
+            
+            }
+            
+            .main { 
+            
+                grid-area: main;
+
+                .contenedor_texto{
+                    .texto_1{
+            
+                        height: 6rem;
+                        position: relative;
+                        right: 1rem;
+                        .texto_1_1{
+                            font-size: 1.5rem;
+                            margin: 0;
+                            line-height: 1;
+                            opacity: 0.8;
+                        }
+                    
+                    
+                    
+                        .texto_1_2{
+                    
+                            font-size: 2rem;
+                            margin: 0;
+                            line-height: 1;
+                            animation: stretchEffect 3s infinite alternate; /* Aplica la animación */
+                            transform-origin: bottom;
+                            opacity: 0.8;
+                            position: relative;
+                            top:0.2rem;
+                        }
+                    
+                    
+                        .texto_1_3{
+                            font-size: 1.5rem;
+                            margin: 0;
+                            line-height: 1;
+                            position: relative;
+                            top: 0px;
+                            
+                            opacity: 0.8;
+                            
+                        }
+                    }
+
+                    .texto_2{
+                        display: flex;
+                        opacity: 0.8;
+                        position: relative;
+                        top: 1rem;
+                        left: 2rem;
+
+                        .texto_2_1{
+                            display: flex;
+                            align-items: center;
+                            font-size: 4rem;
+                            
+                        }
+                        .texto_2_2{
+                            display: flex;
+                            height: 100%;
+                            flex-direction: column;
+                            justify-content: center;
+                            font-size: 1rem;
+                        }
+                        .texto_2_2_1{
+                            font-size: 1.5rem;
+                        }
+                        .texto_2_2_2{
+                            font-size: 1.5rem;
+                        }
+                        
+                    }
+                }
+            
+            }
+            
+            .footer { 
+                
+                grid-area: footer; 
+            
+            }
+       
+           
+        }
+
+    }
+
+    @media screen and (max-width: 550px) {
+
+        .container {  
+        
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.4fr 0.5fr 2fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "header header header"
+            "main main main"
+            "footer footer footer";
+            background-color: black;
+           
+        }
+        
+        .header { 
+            grid-area: header;
+
+            .contenedor_info{
+                .titulo{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    padding-top: 0.3rem;
+                }
+            }
+        
+        }
+        
+        .main { 
+        
+            grid-area: main;
+
+            .sectionMundo{
+                .contenedor_texto{
+
+                    .texto_1{
+                        height: 6rem;
+                        position: relative;
+                        right: 1rem;
+                        bottom: 1.5rem;
+                        .texto_1_1{
+                            font-size: 1rem;
+                            margin: 0;
+                            line-height: 1;
+                            opacity: 0.8;
+                        }
+                    
+                    
+                    
+                        .texto_1_2{
+                    
+                            font-size: 1.5rem;
+                            margin: 0;
+                            line-height: 1;
+                            animation: stretchEffect 3s infinite alternate; /* Aplica la animación */
+                            transform-origin: bottom;
+                            opacity: 0.8;
+                            position: relative;
+                            top:0.2rem;
+                        }
+                    
+                    
+                        .texto_1_3{
+                            font-size: 1rem;
+                            margin: 0;
+                            line-height: 1;
+                            position: relative;
+                            top: 0px;
+                            
+                            opacity: 0.8;
+                            
+                        }
+                        
+                    }
+
+                    .texto_2{
+                        display: flex;
+                        opacity: 0.8;
+                        position: relative;
+                        top: 0rem;
+                        left: 2.3rem;
+
+                        .texto_2_1{
+                            display: flex;
+                            align-items: center;
+                            font-size: 2.7rem;
+                            
+                        }
+                        .texto_2_2{
+                            display: flex;
+                            height: 100%;
+                            flex-direction: column;
+                            justify-content: center;
+                            font-size: 1rem;
+                        }
+                        .texto_2_2_1{
+                            font-size: 1rem;
+                        }
+                        .texto_2_2_2{
+                            font-size: 1rem;
+                        }
+                        
+                    }
+                }
+            }
+            
+            
+        }
+        
+        .footer { 
+            
+            grid-area: footer; 
+            .info_footer{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                width: 50%;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                align-self: center;
+                .info_1{
+                    margin-bottom: 1.5rem;
+                }
+                .info_2{
+                    margin-bottom: 1.5rem;
+                }
+                .info_3{
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+    
+}

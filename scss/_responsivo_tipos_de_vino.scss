@@ -1,0 +1,196 @@
+@media screen and (max-width: 990px) {
+
+    .container_tipos_de_vino {  
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr 8fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header header"
+            "main_tipos_de_vino main_tipos_de_vino main_tipos_de_vino"
+            "footer footer footer";
+
+            .header { 
+                grid-area: header;
+                .contenedor_info{
+        
+                    nav .contenedor_nav a{
+            
+            
+                        width: 7rem;
+                        height: 2.05rem;
+                
+                    }
+        
+                }
+            
+            }
+            
+            .main_tipos_de_vino { 
+            
+                grid-area: main_tipos_de_vino;
+                .section_tipos{
+                    div{
+                        p{
+                            padding-bottom: 2rem;
+                            height: 15rem;
+                            padding-left: 1.5rem;
+                            padding-right: 1.5rem;
+                        }
+                    }
+                } 
+            }
+        
+            .footer { 
+                
+                grid-area: footer; 
+            
+            }
+    }
+
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .header { 
+        grid-area: header;
+
+        .contenedor_info{
+
+            nav .contenedor_nav{
+                display: flex;
+                flex-wrap: wrap;
+
+                a{
+                    text-decoration: none;
+                    color: black;
+                    width: 6.5rem;
+                    height: 1.9rem;
+                    border-radius: 2px;
+                    transition: color 0.3s, font-size 0.3s;
+                    background-image: url(../fotos/etiqueta.png);
+                    background-size: contain;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 0.5rem;
+                    
+                }
+            }
+        }
+    
+    }
+
+    .main_tipos_de_vino { 
+
+        .section_tipos{
+            display: grid;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 3rem 3rem;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "div1"
+            "div2"
+            "div3"
+            "div4"
+            "div5"
+            "div6";
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin-bottom: 3rem;
+
+            .div1 { 
+        
+                grid-area: div1;
+            
+            }
+            
+            
+            .div2 { 
+            
+                grid-area: div2; 
+            
+            }
+            .div3 { 
+            
+                grid-area: div3; 
+            
+            }
+            .div4 { 
+            
+                grid-area: div4; 
+            
+            }
+            .div5 { 
+                grid-area: div5; 
+            
+            }
+            .div6 { 
+                grid-area: div6; 
+            
+            }
+            
+            div p{
+                padding-bottom: 2rem;
+                height: 8rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+
+    .container_tipos_de_vino {  
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr 6fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header header"
+            "main_tipos_de_vino main_tipos_de_vino main_tipos_de_vino"
+            "footer footer footer";
+    }
+    
+    .header { 
+        grid-area: header; 
+    
+    }
+    
+    .main_tipos_de_vino { 
+    
+        grid-area: main_tipos_de_vino;
+        .section_tipos{
+            div{
+                p{
+                    padding-bottom: 2rem;
+                    height: 15rem;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                }
+                .imagen_tinto{
+                    height: 25rem;
+                }
+            } 
+        }
+    }
+    
+    .footer { 
+        
+        grid-area: footer; 
+    
+    }
+
+    
+}

@@ -1,0 +1,56 @@
+/* COMENZAMOS A AGREGAR ESTILO A LA CASA DEL VINO */
+
+/* VARIABLES */
+
+$color_principal: #cfecd5;
+$color_secundario: #c10040;
+
+$gradiente_celeste: linear-gradient(90deg, white, $color_principal);
+
+$fuente_titulo_principal: bold 3rem 'Acme', sans-serif;
+
+@keyframes stretchEffect {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(1.3); /* Estira hacia abajo, puedes ajustar este valor */
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100%;
+}
+
+
+@import "etiquetas_grid";
+
+@import "header";
+
+@import "main";
+
+@import "main_tipos_de_vino";
+
+@import "main_conocenos";
+
+@import "main_contacto";
+
+@import "main_subscribite";
+
+@import "responsivo_index";
+
+@import "responsivo_tipos_de_vino";
+
+@import "responsivo_conocenos";
+
+@import "responsivo_contacto";
+
+@import "responsivo_subscribite";
+
+@import "footer";

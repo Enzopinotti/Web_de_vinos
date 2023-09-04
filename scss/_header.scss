@@ -1,0 +1,57 @@
+
+.header{
+    display: flex;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    a .logo{
+        width: 150px;
+        background: $gradiente_celeste;
+        height: 100%;
+    }
+
+    .contenedor_info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color:$color_principal;
+
+        .titulo{
+            display: flex;
+            justify-content: center;
+            font: $fuente_titulo_principal;
+            
+        }
+        nav .contenedor_nav{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-around;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            a{
+                text-decoration: none;
+                color: black;
+                width: 10rem;
+                height: 3rem;
+                border-radius: 2px;
+                transition: color 0.3s, font-size 0.3s;
+                background-image: url(../fotos/etiqueta.png);
+                background-size: contain;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight:600;
+
+                &:hover {
+                    color: $color_secundario;
+                    font-size: 1.03em;
+                    
+                }
+            }
+            
+        }
+
+    }
+    
+}

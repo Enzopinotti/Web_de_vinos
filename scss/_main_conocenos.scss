@@ -1,0 +1,53 @@
+.main_conocenos{
+    background-image: url(../fotos/main_conocenos.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contenedor_titulo{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        background-color: #cfecd541;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        .titulo_main_contacto{
+
+            width: 100%;
+            padding:1rem;
+            text-align: center;
+            border-radius: 1rem;
+            font-family: 'Acme', sans-serif;
+            font-size: 2rem;
+            background: linear-gradient(to bottom, $color_principal, $color_secundario);
+            width: 30%;
+            
+        }
+    
+    }
+
+    .contenedor_datos{
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 4rem;
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+        transition: background-color 1s;
+        margin-bottom: 4rem;
+        &:hover{
+
+            background-color: rgba(255, 255, 255, 1); 
+        }
+        article{
+            background-color: rgba(38, 130, 150, 0.151);
+            padding: 2rem;
+            border-radius: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}

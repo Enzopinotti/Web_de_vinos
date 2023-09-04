@@ -1,0 +1,76 @@
+@media screen and (max-width: 990px) {
+
+    .container_conocenos {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr 4fr 0.3fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header header"
+            "main_conocenos main_conocenos main_conocenos"
+            "footer footer footer";
+
+
+            .header { 
+                grid-area: header;
+                .contenedor_info{
+    
+                    nav .contenedor_nav a{
+            
+            
+                        width: 7rem;
+                        height: 2.05rem;
+                
+                    }
+    
+                }
+                
+            
+            }
+        }
+    }
+
+@media screen and (max-width: 550px) {
+
+    .container_conocenos {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.1fr 4fr 0.3fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header header"
+            "main_conocenos main_conocenos main_conocenos"
+            "footer footer footer";
+
+
+            .header { 
+    
+                grid-area: header; 
+            
+            }
+            
+            .main_conocenos { 
+            
+                grid-area: main_conocenos;
+                .contenedor_titulo{
+                    .titulo_main_contacto{
+                        width: 80%;
+                    }
+                }
+            
+            }
+            
+            .footer { 
+            
+                grid-area: footer; 
+            
+            }
+    }
+      
+    
+
+    
+
+}

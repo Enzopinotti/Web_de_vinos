@@ -1,0 +1,93 @@
+
+.main_tipos_de_vino{
+
+    background-image: url(../fotos/main_tipos_de_vino.jpg);
+    background-size: cover;
+    .contenedor_titulo_main{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        background-color: #cfecd541;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        .titulo_main_tipos_de_vino{
+            padding:1rem;
+            text-align: center;
+            border-radius: 1rem;
+            font-family: 'Acme', sans-serif;
+            font-size: 2rem;
+            background: linear-gradient(to bottom, $color_principal, $color_secundario);
+            width: 30%;
+
+        }
+    }
+    .section_tipos{
+        display: flex;
+        flex-direction: row;
+        display: grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 3rem 3rem;
+        grid-auto-flow: row;
+        grid-template-areas:
+        "div1 div2"
+        "div3 div4"
+        "div5 div6";
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+        
+        .div1 { 
+            grid-area: div1;
+        }
+        .div2 { 
+            grid-area: div2; 
+        }
+        .div3 { 
+            grid-area: div3; 
+        }
+        .div4 { 
+            grid-area: div4; 
+        }
+        .div5 { 
+            grid-area: div5; 
+        }
+        .div6 { 
+            grid-area: div6; 
+        }
+        div{
+
+            background-color: rgba(255, 255, 255, 0.7);
+            border-top-left-radius: 4rem;
+            border-top-right-radius: 4rem;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            transition: background-color 1s;
+            padding-top: 1.5rem;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+
+            p{
+                padding-bottom: 2rem;
+                height: 8rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            .imagen_tinto{
+                width: 100%;
+                height: 35.9rem;
+                border-bottom-left-radius: 1.5rem;
+                border-bottom-right-radius: 1.5rem;
+            }
+            &:hover {
+
+                background-color: rgba(255, 255, 255, 1); /* Opacidad completa al hacer hover */
+            }
+        }
+    }
+}

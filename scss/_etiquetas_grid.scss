@@ -1,0 +1,160 @@
+/* ETIQUETAS DE GRID */
+
+.container {  
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 3fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+    background-color: black;
+    .header { 
+        grid-area: header;
+    
+    }
+    
+    .main { 
+    
+        grid-area: main;
+        
+    
+    }
+    
+    .footer { 
+        
+        grid-area: footer; 
+    
+    }
+   
+}
+
+
+
+.container_tipos_de_vino {  
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 8fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        "main_tipos_de_vino main_tipos_de_vino main_tipos_de_vino"
+        "footer footer footer";
+
+    .header { 
+        grid-area: header; 
+    
+    }
+    
+    .main_tipos_de_vino { 
+    
+        grid-area: main_tipos_de_vino; 
+    
+    }
+    
+    .footer { 
+        
+        grid-area: footer; 
+    
+    }
+}
+
+
+
+.container_conocenos {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 6.5fr 0.3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        "main_conocenos main_conocenos main_conocenos"
+        "footer footer footer";
+
+    .header { 
+
+        grid-area: header; 
+    
+    }
+    
+    .main_conocenos { 
+    
+        grid-area: main_conocenos; 
+    
+    }
+    
+    .footer { 
+    
+        grid-area: footer; 
+    
+    }
+}
+  
+
+  
+.container_contacto { 
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 3fr 0.3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        "main_contacto main_contacto main_contacto"
+        "footer footer footer";
+
+    .header { 
+
+        grid-area: header;
+    }
+        
+        .main_contacto { 
+    
+        grid-area: main_contacto;
+    }
+        
+        .footer { 
+        
+        grid-area: footer;
+    }
+}
+  
+
+
+
+.container_subscribite {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 4fr 0.3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        "main_subscribite main_subscribite main_subscribite"
+        "footer footer footer";
+    
+    .header { 
+
+        grid-area: header;
+    }
+        
+    .main_subscribite { 
+        
+        grid-area: main_subscribite;
+    }
+        
+    .footer { 
+        
+        grid-area: footer;
+    }
+
+  }
+  
