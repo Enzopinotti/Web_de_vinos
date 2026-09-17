@@ -1,0 +1,110 @@
+name: Temporary modernization finalizer
+
+on:
+  push:
+    branches:
+      - modernize/2026-static-quality
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: modernize/2026-static-quality
+
+      - name: Set up Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Normalize repeated HTML and Sass module headers
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          for (const name of fs.readdirSync('pages').filter((file) => file.endsWith('.html'))) {
+            const file = path.join('pages', name);
+            let html = fs.readFileSync(file, 'utf8');
+            html = html.replace('content="width=, initial-scale=1.0"', 'content="width=device-width, initial-scale=1.0"');
+            html = html.replace(/<nav>/g, '<nav aria-label="Navegación principal">');
+            html = html.replace(/<a href="([^"]+)"><li>([^<]+)<\/li><\/a>/g, '<li><a href="$1">$2</a></li>');
+            html = html.replace(/alt="Foto Logo"/g, 'alt="Logo de La Casa del Vino"');
+            html = html.replace(/\s*<script\s+src="https?:\/\/[^\"]+"[^>]*><\/script>/g, '');
+
+            if (name === 'contacto.html') {
+              html = html.replace(
+                '<form class="formulario_contacto">',
+                '<form class="formulario_contacto" data-demo-form="true" aria-describedby="contacto-demo-note">\n                <p id="contacto-demo-note" role="note">Este formulario es demostrativo: no envía ni almacena datos.</p>',
+              );
+              html = html.replace(
+                '<button type="submit" class="btn btn-success">Enviar</button>',
+                '<button type="button" class="btn btn-success" disabled>Demo sin envío</button>',
+              );
+            }
+
+            if (name === 'subscribite.html') {
+              html = html.replace(
+                '<form class="formulario_subscribite">',
+                '<form class="formulario_subscribite" data-demo-form="true" aria-describedby="suscripcion-demo-note">\n                <p id="suscripcion-demo-note" role="note">Este formulario es demostrativo: no envía ni almacena datos.</p>',
+              );
+              html = html.replace(
+                '<button type="submit" class="btn btn-success">Enviar</button>',
+                '<button type="button" class="btn btn-success" disabled>Demo sin envío</button>',
+              );
+            }
+
+            fs.writeFileSync(file, html);
+          }
+
+          for (const name of fs.readdirSync('scss').filter((file) => /^_.*\.scss$/.test(file))) {
+            if (name === '_tokens.scss' || name === '_base.scss') continue;
+            const file = path.join('scss', name);
+            const source = fs.readFileSync(file, 'utf8');
+            if (!source.startsWith('@use "tokens" as *;')) {
+              fs.writeFileSync(file, `@use "tokens" as *;\n\n${source}`);
+            }
+          }
+          NODE
+
+      - name: Remove generated dependencies from Git authority
+        run: |
+          git rm -r --cached --ignore-unmatch node_modules
+          rm -rf node_modules
+
+      - name: Regenerate lockfile from exact package contract
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Install from regenerated lockfile
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Compile CSS with Dart Sass
+        run: npm run build-css
+
+      - name: Validate normalized site
+        run: npm run validate-site
+
+      - name: Commit canonical modernization output
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No canonicalization changes required.'
+            exit 0
+          fi
+          git commit -m 'chore: canonicalize static modernization artifacts'
+          git push origin HEAD:modernize/2026-static-quality
