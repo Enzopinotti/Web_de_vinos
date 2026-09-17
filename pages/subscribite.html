@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>La Casa del Vino</title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,18 +21,18 @@
 
         <header class="header">
 
-            <a href="../index.html"><img class="logo" src="../fotos/vineLogo.png" alt="Foto Logo"></a>
+            <a href="../index.html"><img class="logo" src="../fotos/vineLogo.png" alt="Logo de La Casa del Vino"></a>
 
             <div class="contenedor_info">
 
                 <h1 class="titulo">LA CASA DEL VINO</h1>
-                <nav>
+                <nav aria-label="Navegación principal">
                     <ul class="contenedor_nav">
-                        <a href="../index.html"><li>Inicio</li></a>
-                        <a href="../pages/tiposDeVinos.html"><li>Tipos de Vino</li></a>
-                        <a href="../pages/conocenos.html"><li>Aprendamos</li></a>
-                        <a href="../pages/contacto.html"><li>Preguntas</li></a>
-                        <a href="../pages/subscribite.html"><li>Subscribite</li></a>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/tiposDeVinos.html">Tipos de Vino</a></li>
+                        <li><a href="../pages/conocenos.html">Aprendamos</a></li>
+                        <li><a href="../pages/contacto.html">Preguntas</a></li>
+                        <li><a href="../pages/subscribite.html">Subscribite</a></li>
                     </ul>
                 </nav>
             </div>
@@ -47,7 +47,8 @@
             </section>
 
 
-            <form class="formulario_subscribite">
+            <form class="formulario_subscribite" data-demo-form="true" aria-describedby="suscripcion-demo-note">
+                <p id="suscripcion-demo-note" role="note">Este formulario es demostrativo: no envía ni almacena datos.</p>
                 
                 <br>
                 <div class="form-group">
@@ -81,7 +82,7 @@
 
                     <br><br>
 
-                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <button type="button" class="btn btn-success" disabled>Demo sin envío</button>
                     <button type="reset" class="btn btn-default">Resetear</button>
 
                 </div>
@@ -133,10 +134,6 @@
 
             
         </footer>
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
     </body>
