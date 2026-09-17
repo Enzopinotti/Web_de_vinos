@@ -1,0 +1,9 @@
+node_modules/
+
+# npm / tooling
+npm-debug.log*
+.DS_Store
+
+# editor
+.vscode/
+.idea/
